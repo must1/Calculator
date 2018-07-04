@@ -8,7 +8,7 @@ public class RomanToArabicNumbersChanger {
 
         if (romanNumber.matches("[0-9]") || !romanNumber.matches("[^MDCLXVI]") || !romanNumber.matches("[MDCLXVI]{0,3}")) {
             throw new RomanException();
-        }
+        } //nie dziala to jeszcze:(
 
         char romanArray[] = romanNumber.toCharArray();
 

@@ -47,9 +47,7 @@ public class CalculatorEngine {
         String secondRomanNumber = input.next();
         input.close();
         firstArabicNumber = romanToArabicNumbersChanger.getChangedFirstRomanToArabic(firstRomanNumber);
-        System.out.println(firstArabicNumber);
         secondArabicNumber = romanToArabicNumbersChanger.getChangedSecondRomanNumberToArabic(secondRomanNumber);
-        System.out.println(secondArabicNumber);
     }
 
     private int getResultOfCalculations(int option) {

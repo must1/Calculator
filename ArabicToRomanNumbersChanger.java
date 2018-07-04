@@ -1,27 +1,17 @@
 public class ArabicToRomanNumbersChanger {
+    private StringBuilder RomanString = new StringBuilder();
+    private String romanThousand = "M";
+    private String romanHundred = "C";
+    private String romanTen = "X";
+    private String romanOne = "I";
 
-    public StringBuilder changeRomanToArabicNumber(int ArabicNumber) {
-        int thousand = ArabicNumber / 1000;
-        System.out.println(thousand);
-        int hundred = ArabicNumber / 100 % 10;
-        System.out.println(hundred);
-        int tens = ArabicNumber / 10 % 10;
-        System.out.println(tens);
-        int units = ArabicNumber % 10;
-        System.out.println(units);
-
-        StringBuilder RomanString = new StringBuilder();
-
-        String romanThousand = "M";
-        String romanHundred = "C";
-        String romanTen = "X";
-        String romanOne = "I";
-
+    private void changeThousandthPartOfRomanNumber(int thousand) {
         for (int i = 0; i < thousand; i++) {
             RomanString.append(romanThousand);
         }
+    }
 
-
+    private void changeHundredthPartOfRomanNumber(int hundred) {
         switch (hundred) {
             case 4: {
                 RomanString.append("CD");
@@ -53,7 +43,9 @@ public class ArabicToRomanNumbersChanger {
                 }
             }
         }
+    }
 
+    private void changeDecimalPartOfRomanNumber(int tens) {
         switch (tens) {
             case 4: {
                 RomanString.append("XL");
@@ -86,6 +78,9 @@ public class ArabicToRomanNumbersChanger {
             }
         }
 
+    }
+
+    private void changeUnityPartOfRomanNumber(int units) {
         switch (units) {
             case 4: {
                 RomanString.append("IV");
@@ -117,6 +112,20 @@ public class ArabicToRomanNumbersChanger {
                 }
             }
         }
+    }
+
+    public StringBuilder changeRomanToArabicNumber(int ArabicNumber) {
+        int thousand = ArabicNumber / 1000;
+        int hundred = ArabicNumber / 100 % 10;
+        int tens = ArabicNumber / 10 % 10;
+        int units = ArabicNumber % 10;
+
+
+        changeThousandthPartOfRomanNumber(thousand);
+        changeHundredthPartOfRomanNumber(hundred);
+        changeDecimalPartOfRomanNumber(tens);
+        changeUnityPartOfRomanNumber(units);
+
         return RomanString;
     }
 }

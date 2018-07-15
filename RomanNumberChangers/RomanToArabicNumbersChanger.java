@@ -1,3 +1,5 @@
+package RomanNumberChangers;
+
 public class RomanToArabicNumbersChanger {
 
     private int changeRomanToArabicNumber(String romanNumber) throws RomanException {
@@ -6,9 +8,14 @@ public class RomanToArabicNumbersChanger {
         int sum = 0;
         romanNumber = romanNumber.toUpperCase();
 
-        if (romanNumber.matches("[0-9]") || !romanNumber.matches("[^MDCLXVI]") || !romanNumber.matches("[MDCLXVI]{0,3}")) {
-            throw new RomanException();
-        } //nie dziala to jeszcze:(
+        /*if (romanNumber.matches("[0-9]") || !romanNumber.matches("[^MDCLXVI]") || !romanNumber.matches("[MDCLXVI]{0,3}")) {
+            throw new RomanNumberChangers.RomanException();
+        }*/ //TODO
+           /*Should throw a Exception if it finds in an input that:
+           - contains any digital;
+           - doesn't contain any MDCLXVI letter;
+           - contains more than 3 occurrences of relevant letter;
+            */
 
         char romanArray[] = romanNumber.toCharArray();
 
